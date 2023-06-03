@@ -8,7 +8,7 @@
     async function updateHitCounter() {
       const namespace = 'shafferma08'; // Replace with your desired namespace
       const key = 'homepage'; // Replace with your desired key
-      const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+      const proxyUrl = 'https://api.countapi.xyz/cors/';
       const apiUrl = `https://api.countapi.xyz/hit/${namespace}/${key}`;
       try {
         const response = await fetch(proxyUrl + apiUrl);
