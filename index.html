@@ -6,11 +6,17 @@
   <title>Hit Counter Example</title>
   <script>
     async function updateHitCounter() {
-      const namespace = 'local-test'; // Replace with your desired namespace
+      const namespace = 'shafferma08'; // Replace with your desired namespace
       const key = 'homepage'; // Replace with your desired key
-      const response = await fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`);
-      const data = await response.json();
-      document.getElementById("hitCounter").innerHTML = data.value;
+      const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+      const apiUrl = `https://api.countapi.xyz/hit/${namespace}/${key}`;
+      try {
+        const response = await fetch(proxyUrl + apiUrl);
+        const data = await response.json();
+        document.getElementById("hitCounter").innerHTML = data.value;
+      } catch (error) {
+        console.error(error);
+      }
     }
   </script>
 </head>
